@@ -75,7 +75,8 @@ public class TestAlgorithms {
         Integer minimum = Stream.of(edgeAB, edgeAC, edgeBC, edgeCD, edgeCF, edgeCE, edgeDF, edgeEF)
                 .filter(Edge::isIncluded).map(Edge::getWeight).reduce(0, Integer::sum);
         System.out.println("Minimum Weight: " + minimum);
-
+        
+//Floyd-Warshall Algorithm
         int[][] weightsMatrix = {
                 {0, 3, 2, INF, INF},
                 {INF, 0, INF, 7, INF},
