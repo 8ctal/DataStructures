@@ -24,6 +24,7 @@ public class FloydWarshall {
                             //If the weight is less than the current weight, update the weight and the successor
                             if (weight < weightsMatrix[start][end]) {
                                 weightsMatrix[start][end] = weight;
+                                //If the weight is "∞", there is no successor
                                 successorsMatrix[start][end] = successorsMatrix[start][intermediate];
                             }
                         })
