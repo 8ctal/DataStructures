@@ -89,8 +89,9 @@ public class Vertex<T> implements Comparable<Vertex<T>> {
         neighbors.add(new Neighbor<T>(vertex, edge));
     }
 
+    //For Prim's Algorithm
     @Override
-    public String toString() { //For Prim's Algorithm
+    public String toString() {
         return "Vertex " + data + " -> " + neighbors.stream()
                 .filter(n -> n.getVertex().isVisited() && n.getEdge().isIncluded())
                 .map(n -> n.getVertex().getData() + "|" + n.getEdge().getWeight())
