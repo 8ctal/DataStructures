@@ -9,6 +9,7 @@ import java.util.stream.*;
 
 public class TestAlgorithms {
     public static void main(String[] args) throws Exception {
+        //Create the vertices
         Vertex<String> a = new Vertex<>("A");
         Vertex<String> b = new Vertex<>("B");
         Vertex<String> c = new Vertex<>("C");
@@ -75,7 +76,7 @@ public class TestAlgorithms {
         Integer minimum = Stream.of(edgeAB, edgeAC, edgeBC, edgeCD, edgeCF, edgeCE, edgeDF, edgeEF)
                 .filter(Edge::isIncluded).map(Edge::getWeight).reduce(0, Integer::sum);
         System.out.println("Minimum Weight: " + minimum);
-        
+
 //Floyd-Warshall Algorithm
         int[][] weightsMatrix = {
                 {0, 3, 2, INF, INF},
